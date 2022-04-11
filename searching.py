@@ -23,11 +23,27 @@ def read_data(file_name, field):
     return slovnicek[field]
 
 
+def linear_search(seq, number):
+    pom = list()
+    count = 0
+    for i in range(len(seq)):
+        if seq[i] == number:
+            pom.append(i)
+            count += 1
+
+    return {
+        'positions': pom,
+        'count': count
+    }
+
+
+
 
 def main():
     file_name = 'sequential.json'
     sequential_data = read_data(file_name, 'unordered_numbers')
     print(sequential_data)
+    print(linear_search(sequential_data, number=5))
     pass
 
 
